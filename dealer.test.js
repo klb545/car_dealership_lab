@@ -60,7 +60,12 @@ describe('finding the total value of all the cars in stock', () => {
 });
 
 
-// extensions
+// // // // // // // // // // // // // // // // // // // // // //
+// // // EXTENSION 5 - Write tests for extensions 4 & 5  // // //
+// // // // // // // // // // // // // // // // // // // // // //
+
+// 5) Write tests to ensure all possible conditions are met, eg. the customer can afford the car.
+
 describe('dealer can sell car if it is in stock and customer can pay', () => {
     
     test('dealer will sell car if they have it in stock', () => {
@@ -90,5 +95,8 @@ describe('dealer can sell car if it is in stock and customer can pay', () => {
         expect(dealer.stockCount()).toEqual(2);
     });
 
-})
+});
+
+
+
 
