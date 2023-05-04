@@ -78,10 +78,15 @@ describe('dealer can sell car if it is in stock and customer can pay', () => {
     });
 
     test('dealer won\'t sell car if they have it in stock but the customer doesn\'t have enough money', () => {
-        dealer.stock = [];
-        dealer.addCarToStock(car1);
-        dealer.addCarToStock(car3);
+        dealer.stock = [car1, car3];
         dealer.sellCar(customer, car3);
+        expect(dealer.stockCount()).toEqual(2);
+    });
+
+    test('dealer won\'t sell car if customer is currently in possession of a car (in a world where you can only own one car at a time)', () => {
+        dealer.stock = [car1, car2];
+        customer.car = car2;
+        dealer.sellCar(customer, car1);
         expect(dealer.stockCount()).toEqual(2);
     });
 

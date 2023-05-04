@@ -43,7 +43,7 @@ Dealer.prototype.findTotalValueOfAllCarsInStock = function (){
 // Extensions
 Dealer.prototype.sellCar = function (customer, carToFind) {
     const checkInStock = this.stock.find(car => car === carToFind);
-    if(checkInStock !== undefined && customer.wallet >= carToFind.price){
+    if(checkInStock !== undefined && customer.wallet >= carToFind.price && customer.car === null){
         this.stock.splice((this.stock.findIndex(car => car === carToFind)), 1);
         customer.buyCar(carToFind);
     };
