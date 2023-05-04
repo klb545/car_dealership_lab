@@ -6,8 +6,8 @@ const customer = new Customer("Zsolt", 20000);
 const dealer = new Dealer("dealer name", 2);
 const toyota = new Car("Toyota", 20000, "electric");
 const peugot = new Car("Peugot", 15000, "diesel");
-const car3 = new Car("Honda", 25000, "petrol");
-dealer.stock = [toyota, peugot, car3];
+const hyundai = new Car("Hyundai", 25000, "petrol");
+dealer.stock = [toyota, peugot, hyundai];
 
 describe('getters', () => {
 

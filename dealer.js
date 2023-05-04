@@ -43,6 +43,8 @@ Dealer.prototype.findTotalValueOfAllCarsInStock = function (){
     return totalValue;
 }
 
+
+
 // // // // // // // // // // // // // // // // // // //
 // // // EXTENSIONS 4 & 6 - Dealership methods  // // //
 // // // // // // // // // // // // // // // // // // //
@@ -56,9 +58,8 @@ Dealer.prototype.sellCar = function (customer, carToFind) {
         customer.buyCar(carToFind);
     };
 }
-// 6) Modify the method which searches for cars by manufacturer to let the
-//    user search by price or engine type instead.
-//    Note: haven't written tests for these yet.
+// 6) Modify the method which searches for cars by manufacturer to let the user search by price or engine type instead.
+//    Note: haven't written tests for these.
 // 6.1) findAllCarsInPriceRange()
 Dealer.prototype.findAllCarsInPriceRange = function (lowerBound, upperBound){
     const cars = this.stock.filter(car => car.price >= lowerBound && car.price <= upperBound);
