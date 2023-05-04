@@ -11,6 +11,7 @@ const dealer = new Dealer("dealer name", 2);
 // customer
 const zsolt = new Customer("Zsolt", 20000);
 
+
 describe('getters', () => {
 
     test('get name', () => expect(dealer.name).toBe("dealer name"));
@@ -23,21 +24,29 @@ describe('getters', () => {
 
 describe('adding car(s) to stock', () => {  
 
+    beforeEach(() => {
+        dealer.stock = [];
+    });
+
     test('can add single car to stock', () => {
         dealer.addCarToStock(toyota);
         expect(dealer.stock).toEqual([{"manufacturer": "Toyota", "price": 20000, "engineType": "electric"}]);
     });
 
     test('can add a second car to the stock', () => {
+        dealer.addCarToStock(toyota);
         dealer.addCarToStock(peugot);
         // expected = [toyota, peugot];
         expect(dealer.stock).toEqual([{"manufacturer": "Toyota", "price": 20000, "engineType": "electric"}, {"manufacturer": "Peugot", "price": 15000, "engineType": "diesel"}]);
     });
 
     test('will not add car to stock if it exceeds the dealer\'s max capacity', () => {
+        dealer.addCarToStock(toyota);
+        dealer.addCarToStock(peugot);
         dealer.addCarToStock(hyundai);
         // expected = [toyota, peugot];
         expect(dealer.stock).toEqual([toyota, peugot]);
+        expect(dealer.stockCount()).toBe(2);
     });
     
 });
@@ -68,17 +77,18 @@ describe('finding the total value of all the cars in stock', () => {
 // 5) Write tests to ensure all possible conditions are met, eg. the customer can afford the car.
 
 describe('dealer can sell car if it is in stock and customer can pay', () => {
+
+    beforeEach(() => {
+        dealer.stock = [toyota, peugot];
+        zsolt.car = null;
+      });
     
     test('dealer will sell car if they have it in stock', () => {
-        dealer.addCarToStock(toyota);
-        dealer.addCarToStock(peugot);
         dealer.sellCar(zsolt, toyota);
         expect(dealer.stockCount()).toEqual(1);
     });
 
     test('dealer won\'t sell car if they don\'t have it in stock', () => {
-        dealer.addCarToStock(toyota);
-        zsolt.car = null;
         dealer.sellCar(zsolt, hyundai);
         expect(dealer.stockCount()).toEqual(2);
     });
@@ -90,7 +100,6 @@ describe('dealer can sell car if it is in stock and customer can pay', () => {
     });
 
     test('dealer won\'t sell car if customer is currently in possession of a car (in a world where you can only own one car at a time)', () => {
-        dealer.stock = [toyota, peugot];
         zsolt.car = peugot;
         dealer.sellCar(zsolt, toyota);
         expect(dealer.stockCount()).toEqual(2);
