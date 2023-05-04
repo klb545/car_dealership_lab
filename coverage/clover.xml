@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683228956399" clover="3.2.0">
-  <project timestamp="1683228956399" name="All files">
-    <metrics statements="55" coveredstatements="46" conditionals="16" coveredconditionals="10" methods="20" coveredmethods="15" elements="91" coveredelements="71" complexity="0" loc="55" ncloc="55" packages="1" files="3" classes="3"/>
+<coverage generated="1683229859264" clover="3.2.0">
+  <project timestamp="1683229859264" name="All files">
+    <metrics statements="51" coveredstatements="45" conditionals="14" coveredconditionals="10" methods="19" coveredmethods="15" elements="84" coveredelements="70" complexity="0" loc="51" ncloc="51" packages="1" files="3" classes="3"/>
     <file name="car.js" path="/Users/katiebamford/Documents/coursework/week_07/day_3/car_dealership_lab_1/car.js">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="1" count="3" type="stmt"/>
@@ -11,7 +11,7 @@
       <line num="7" count="3" type="stmt"/>
     </file>
     <file name="customer.js" path="/Users/katiebamford/Documents/coursework/week_07/day_3/car_dealership_lab_1/customer.js">
-      <metrics statements="18" coveredstatements="13" conditionals="8" coveredconditionals="4" methods="3" coveredmethods="2"/>
+      <metrics statements="14" coveredstatements="12" conditionals="6" coveredconditionals="4" methods="2" coveredmethods="2"/>
       <line num="1" count="2" type="stmt"/>
       <line num="3" count="2" type="stmt"/>
       <line num="4" count="2" type="stmt"/>
@@ -25,11 +25,7 @@
       <line num="15" count="3" type="stmt"/>
       <line num="16" count="3" type="stmt"/>
       <line num="18" count="0" type="stmt"/>
-      <line num="21" count="2" type="stmt"/>
-      <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="23" count="0" type="stmt"/>
-      <line num="24" count="0" type="stmt"/>
-      <line num="29" count="2" type="stmt"/>
+      <line num="22" count="2" type="stmt"/>
     </file>
     <file name="dealer.js" path="/Users/katiebamford/Documents/coursework/week_07/day_3/car_dealership_lab_1/dealer.js">
       <metrics statements="32" coveredstatements="28" conditionals="8" coveredconditionals="6" methods="16" coveredmethods="12"/>

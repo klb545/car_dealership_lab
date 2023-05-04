@@ -48,7 +48,7 @@ Dealer.prototype.sellCar = function (customer, carToFind) {
         customer.buyCar(carToFind);
     };
 }
-
+// haven't written tests for these two extensions
 Dealer.prototype.findAllCarsInPriceRange = function (lowerBound, upperBound){
     const cars = this.stock.filter(car => car.price >= lowerBound && car.price <= upperBound);
     return cars;

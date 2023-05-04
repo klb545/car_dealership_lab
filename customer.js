@@ -18,13 +18,6 @@ Customer.prototype.buyCar = function (purchasedCar) {
     return `${this.name} is unable to purchase this car. They need ${purchasedCar.price - this.wallet} more in their wallet.`;
 }
 
-Customer.prototype.sellCar = function () {
-    if (this.car !== null) {
-        this.wallet = this.wallet + this.car.price;
-        this.car = null;
-    }
-}
-
 
 module.exports = Customer;
 

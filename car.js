@@ -6,4 +6,3 @@ const Car = function (manufacturer, price, engineType){
 
 module.exports = Car;
 
-

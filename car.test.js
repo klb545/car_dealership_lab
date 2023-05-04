@@ -5,27 +5,16 @@ const car = new Car("Toyota", 20000, "electric");
 describe('getters', () => {
 
     test('has manufacturer', () => {
-        expected = "Toyota";
-        actual = car.manufacturer;
-        expect(actual).toBe(expected);
+        expect(car.manufacturer).toBe("Toyota");
     });
 
     test('has price', () => {
-        expected = 20000;
-        actual = car.price;
-        expect(actual).toBe(expected);
+        expect(car.price).toBe(20000);
     });
 
     test('has engineType', () => {
-        expected = "electric";
-        actual = car.engineType;
-        expect(actual).toBe(expected);
+        expect(car.engineType).toBe("electric");
     });
     
 });
-
-
-
-
-
 
