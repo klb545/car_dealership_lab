@@ -1,3 +1,9 @@
+// // // // // // // // // // // // // // // //
+// // // EXTENSION 2 - Customer class  // // //
+// // // // // // // // // // // // // // // //
+
+// 2) Add a Customer class with a name, a wallet representing the amount of money they have and a car property which is initialised to be null.
+
 const Car = require('./car');
 
 const Customer = function (name, wallet) {
@@ -6,6 +12,12 @@ const Customer = function (name, wallet) {
     this.car = null;
 }
 
+
+// // // // // // // // // // // // // // // // // // // //
+// // // EXTENSION 3 - Customer method - buyCar()  // // //
+// // // // // // // // // // // // // // // // // // // //
+
+// 3) Write a buyCar method which checks the Customer wallet and updates their Car property.
 Customer.prototype.buyCar = function (purchasedCar) {
     if (this.car !== null) {
         return `${this.name} should sell their ${this.car.manufacturer} before they purchase another car.`;
