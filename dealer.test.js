@@ -12,11 +12,11 @@ const customer = new Customer("Zsolt", 20000);
 
 describe('getters', () => {
 
-    test('has name', () => expect(dealer.name).toBe("dealer name"));
+    test('get name', () => expect(dealer.name).toBe("dealer name"));
 
-    test('has maxNumberOfCars', () => expect(dealer.maxNumberOfCars).toBe(2));
+    test('get maxNumberOfCars', () => expect(dealer.maxNumberOfCars).toBe(2));
 
-    test('has stock', () => expect(dealer.stock).toEqual([]));
+    test('get stock', () => expect(dealer.stock).toEqual([]));
     
 });
 
