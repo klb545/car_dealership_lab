@@ -1,10 +1,13 @@
 const Customer = require('./customer');
 const Car = require('./car');
+const Dealer = require('./dealer');
 
 const customer = new Customer("Zsolt", 20000);
+const dealer = new Dealer("dealer name", 2);
 const toyota = new Car("Toyota", 20000, "electric");
 const peugot = new Car("Peugot", 15000, "diesel");
 const car3 = new Car("Honda", 25000, "petrol");
+dealer.stock = [toyota, peugot, car3];
 
 describe('getters', () => {
 
@@ -36,9 +39,11 @@ describe('customer can buy car if they have enough money', () => {
 
     test('customer is unable to buy car because they don\'t have enough money', () => {
         customer.car = null;
-        customer.wallet = 20000;
+        customer.wallet = 10000;
+        dealer.stock = [toyota, peugot];
         //
-        expect(customer.wallet).toBe(20000);
+        customer.buyCar(toyota);
+        expect(customer.wallet).toBe(10000);
         expect(customer.car).toEqual(null);
     });
     

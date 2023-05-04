@@ -42,9 +42,9 @@ Dealer.prototype.findTotalValueOfAllCarsInStock = function (){
 
 // Extensions
 Dealer.prototype.sellCar = function (customer, carToFind) {
-    const thing = this.stock.find(car => car === carToFind);
-    if(thing !== undefined && customer.wallet >= carToFind.price){
-        this.stock = this.stock.splice(this.stock.findIndex(car => car === carToFind), 1);
+    const checkInStock = this.stock.find(car => car === carToFind);
+    if(checkInStock !== undefined && customer.wallet >= carToFind.price){
+        this.stock.splice((this.stock.findIndex(car => car === carToFind)), 1);
         customer.buyCar(carToFind);
     };
 }
