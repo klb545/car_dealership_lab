@@ -8,17 +8,11 @@ const car3 = new Car("Honda", 25000, "petrol");
 
 describe('getters', () => {
 
-    test('has name', () => {
-        expect(customer.name).toBe("Zsolt");
-    });
+    test('has name', () => expect(customer.name).toBe("Zsolt"));
 
-    test('has wallet', () => {
-        expect(customer.wallet).toBe(20000);
-    });
+    test('has wallet', () => expect(customer.wallet).toBe(20000));
 
-    test('has car', () => {
-        expect(customer.car).toEqual(null);
-    });
+    test('has car', () => expect(customer.car).toEqual(null));
     
 });
 
